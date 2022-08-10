@@ -39,7 +39,7 @@ jobs:
           cache-version: 2
 
       - name: Install dependencies
-        run: Rscript -e "install.packages('pak')" -e "pak::pak_install('r-lib/revdepcheck')"
+        run: Rscript -e "install.packages('pak')" -e "pak::pkg_install('r-lib/revdepcheck')"
 
       - name: Revdepcheck
         run: Rscript -e "revdepcheck::revdep_reset()" -e "revdepcheck::revdep_check(num_workers=4)"
